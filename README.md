@@ -106,10 +106,12 @@ This example contains:
 Once the validation constraint are define, you need to trigger the validation with the following code:
 
 ```java
-XLYValidator  xlyValidator = new XLYValidator(new DefaultConstraintLocator());
-xlyValidator.setWorkbookClass(TestWorkbook.class);
-final InputStream inputStream = // path to the excel file
-final boolean isValid = xlyValidator.isValid(inputStream, outputStream);
+public static void main(String[] args) {
+    final XLYValidator xlyValidator = new XLYValidator(new DefaultConstraintLocator());
+    xlyValidator.setWorkbookClass(TestWorkbook.class);
+    final InputStream inputStream = // path to the excel file
+    final boolean isValid = xlyValidator.isValid(inputStream, outputStream);
+}
 ```
 
 If the workbook is invalid, a new excel file is written to the outputStream with error cells displayed in RED so that the user can fix them.
@@ -121,9 +123,11 @@ The import allow you to transform and excel file into a Workbook (a.k.a a POJO w
 _note:_ Usually you should check that the content of the excel file is valid using XLYValidator before trying to import it (create the java object list).
 
 ```java
-XLYImporter<TestWorkbook> xlyImporter = new XLYImporter<>();
-xlyImporter.setWorkbookClass(TestWorkbook.class);
-final InputStream inputStream = // path to the excel file
-final TestWorkbook workbook = xlyImporter.save(inputStream);
-List<TestBananas> bananas = workbook.getBananas();
+public static void main(String[] args) {
+    final XLYImporter<TestWorkbook> xlyImporter = new XLYImporter<>();
+    xlyImporter.setWorkbookClass(TestWorkbook.class);
+    final InputStream inputStream = // path to the excel file
+    final TestWorkbook workbook = xlyImporter.save(inputStream);
+    List<TestBananas> bananas = workbook.getBananas();
+}
 ```
