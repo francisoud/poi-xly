@@ -12,7 +12,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <poi.version>3.15</poi.version>
         <slf4j.version>1.7.22</slf4j.version>
-        <commons-beanutils.version>1.9.3</commons-beanutils.version>
+        <commons-beanutils.version>1.9.4</commons-beanutils.version>
         <junit.version>4.13.1</junit.version>
         <mockito.version>1.10.19</mockito.version>
     </properties>
